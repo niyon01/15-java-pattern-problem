@@ -1,15 +1,15 @@
 package com.fifteenth_pattern_prb;
 
-/*
+public class Pattern16 {
+    /*
 
-    *
-   * *
-  *   *
- *     *
-*********
+     *********
+      *     *
+       *   *
+        * *
+         *
 
- */
-public class Pattern15 {
+     */
     public static void main(String[] args) {
 
         // number of lines in the pattern
@@ -17,18 +17,18 @@ public class Pattern15 {
         // outer loop will be executed till the number of lines
         for(int row = 1; row <=n; row++) {
             // number of spaces in the column before printing star
-            int noOfSpaces = n -row;
+            int noOfSpaces = row-1;
             //inner loop executes until the noOfSpaces is reached
-            for(int space = 1; space <=noOfSpaces; space++) {
+            for (int space = 1; space <= noOfSpaces; space++) {
                 // print spaces
                 System.out.print(" ");
             }
             // number of stars and spaces in the pattern
-            int noOfStars = row + row -1;
+            int noOfStars = 2*n-row- noOfSpaces;
             // inner loop executes until the noOfStars is reached
-            for(int star = 1; star <= noOfStars; star++){
+            for (int star = 1; star <= noOfStars; star++) {
                 // print stars in first, last in the column and last row
-                if(star ==1 || star == noOfStars || row == n){
+                if (star == 1 || star == noOfStars || row == 1) {
                     System.out.print("*");
                 }
                 // otherwise print spaces
@@ -38,6 +38,5 @@ public class Pattern15 {
             // adding a new line after printing each row
             System.out.println();
         }
-
     }
 }

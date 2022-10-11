@@ -1,18 +1,34 @@
 package com.fifteenth_pattern_prb;
 
 public class Pattern13 {
+    /*
+
+     * * * * *
+      * * * *
+       * * *
+        * *
+         *
+
+     */
     public static void main(String[] args) {
 
-        int n = 4;
-        int N = 2*n-1;
-
-        for(int row = 0; row <N; row++) {
-
-            for(int col = 0; col <2*n-1; col++) {
-                int atEveryIndex = Math.min(Math.min(row, col),Math.min(N-1-row,N-1-col));
-                System.out.print(n -atEveryIndex+" ");;
-
+        // number of lines in the pattern
+        int n = 5;
+        // outer loop iterates over Number of lines which is rows
+        for(int row = 1; row <= n; row ++) {
+            // number of columns for printing space
+            int noOfSpaces = row-1;
+            // inner loop iterates over Number of spaces
+            for(int space = 1; space <= noOfSpaces; space ++) {
+                System.out.print(" ");
             }
+            // number of columns for printing star
+            int noOfStars = n-row+1;
+            // inner loop iterates over Number of stars
+            for(int star = 1; star <= noOfStars; star ++) {
+                System.out.print("* ");
+            }
+            // after printing each row, add a new line
             System.out.println();
         }
     }

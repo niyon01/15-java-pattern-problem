@@ -1,18 +1,36 @@
 package com.fifteenth_pattern_prb;
 
 public class Pattern9 {
+    /*
+
+     * * * * *
+       * * * *
+         * * *
+           * *
+             *
+
+
+     */
     public static void main(String[] args) {
 
+
+        // number of lines in the pattern
         int n = 5;
-        for( int row = 0; row < 2*n-1; row++ ) {
-            int noOfCols = row > n-1 ? 2*n -row-1 : row+1;
-            int noOfSpaces = n-noOfCols;
-            for(int space = 0; space < noOfSpaces; space++) {
-                System.out.print(" ");
+        // outer loop iterates over Number of lines which is rows
+        for(int row = 1; row <= n; row ++) {
+            // number of columns for printing space
+            int noOfSpaces = row-1;
+            // inner loop iterates over Number of spaces
+            for(int space = 1; space <= noOfSpaces; space ++) {
+                System.out.print("  ");
             }
-            for(int col = 0; col < noOfCols; col++) {
+            // number of columns for printing star
+            int noOfStars = n+1-row;
+            // inner loop iterates over Number of stars
+            for(int star = 1; star <= noOfStars; star ++) {
                 System.out.print("* ");
             }
+            // after printing each row, add a new line
             System.out.println();
         }
     }

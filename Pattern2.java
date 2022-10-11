@@ -1,18 +1,26 @@
 package com.fifteenth_pattern_prb;
 
 public class Pattern2 {
+               /*
+     * * * * *
+     * * * *
+     * * *
+     * *
+     *
+
+              */
     public static void main(String[] args) {
-        int n=5;
-        for(int row=0;row<n;row++) {
-            int noOfSpaces= n-row-1;
-            for(int col=0;col<noOfSpaces;col++) {
-                System.out.print("  ");
-            }
-            int colsInRow=row+1;
-            for(int col=0;col<colsInRow;col++) {
+        // number of lines in the pattern;
+        int n = 5;
+        // outer loop iterates over number of lines;
+        for(int row = 1; row <= n; row++) {
+            // inner loop iterates over the formula (n + 1)-row ;
+            for(int col = 1; col <= n+1-row; col++) {
+                //print *
                 System.out.print("* ");
             }
-            if(row!=n-1) System.out.println();
+            // add new line
+            System.out.println();
         }
     }
 }
